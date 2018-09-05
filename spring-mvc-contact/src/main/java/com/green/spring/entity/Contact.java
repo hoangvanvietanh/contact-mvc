@@ -23,7 +23,7 @@ public class Contact {
 	@Column(name="avatar_contact")
 	private String avatar_contact;
 	@Column(name="birthday_contact")
-	private String birthday_contact;
+	private Date birthday_contact;
 	@Enumerated(EnumType.STRING)
 	@Column(name="gender_contact")
 	private Gender gender_contact;
@@ -54,10 +54,10 @@ public class Contact {
 	public void setAvatar_contact(String avatar_contact) {
 		this.avatar_contact = avatar_contact;
 	}
-	public String getBirthday_contact() {
+	public Date getBirthday_contact() {
 		return birthday_contact;
 	}
-	public void setBirthday_contact(String date) {
+	public void setBirthday_contact(Date date) {
 		this.birthday_contact = date;
 	}
 	public Gender getGender_contact() {

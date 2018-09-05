@@ -17,18 +17,14 @@ public class ContactModel {
 	private Gender gender_contact;
 	private String note_contact;
 	
-	/*public void fromContact(Contact contact)
+	public void fromContact(Contact contact)
 	{
 		this.setId_contact(contact.getId_contact());
 		this.setName_contact(contact.getName_contact());
 		this.setAddress_contact(contact.getAddress_contact());
 		this.setAvatar_contact(contact.getAvatar_contact());
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-		try {
-			contact.setBirthday_contact(dateFormat.parse(this.getBirthday_contact()));
-		} catch (ParseException e) {
-			contact.setBirthday_contact(null);
-		}
+		this.setBirthday_contact(dateFormat.format(contact.getBirthday_contact()));
 		this.setGender_contact(contact.getGender_contact());
 		this.setNote_contact(contact.getNote_contact());
 	}
@@ -41,11 +37,16 @@ public class ContactModel {
 		contact.setAddress_contact(this.getAddress_contact());
 		contact.setAvatar_contact(this.getAvatar_contact());
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		try {
+			contact.setBirthday_contact(dateFormat.parse(this.getBirthday_contact()));
+		} catch (ParseException e) {
+			contact.setBirthday_contact(null);
+		}
 		this.setBirthday_contact(dateFormat.format(contact.getBirthday_contact()));
 		contact.setGender_contact(this.getGender_contact());
 		contact.setNote_contact(this.getNote_contact());
 		return contact;
-	}*/
+	}
 
 	public int getId_contact() {
 		return id_contact;

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.green.spring.dao.ContactDAO;
 import com.green.spring.dao.EmailContactDAO;
@@ -36,10 +37,28 @@ public class ContactService {
 		return phoneContactDAO.findAll();
 	}
 	//--------------------------------------------
+	public Contact findContact(int id) {
+		return contactDAO.find(id);
+	}
 	
 	public List<EmailContact> findEmailById(int id)
 	{
 		return emailContactDAO.findByID(id);
+	}
+	
+	public Contact createContact(Contact contact) {
+		Contact result = contactDAO.create(contact);
+		return result;
+	}
+	public Contact updateContact(Contact contact) {
+		Contact result = contactDAO.update(contact);
+		return result;
+	}
+	
+	public Contact deleteContact(Contact contact) {
+		Contact result = contactDAO.delete(contact);
+		return result;
+		
 	}
 	
 }

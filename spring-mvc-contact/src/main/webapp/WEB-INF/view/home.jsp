@@ -79,7 +79,7 @@
 							<button type="button" onclick="window.location.href='<spring:url value="/contact/update?contactId=${contact.id_contact}" />'">Edit</button>
 						</td>
 						<td>
-							<form:form action="/contact?contactId=${contact.id_contact}" method="delete">
+							<form:form action="/spring-mvc/contact?contactId=${contact.id_contact}" method="get">
 								<button type="submit">Delete</button>
 							</form:form>
 						</td>
